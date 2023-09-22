@@ -125,7 +125,7 @@ export const locationStyle =
 export const noDataAvailableStyle = "text-placeholder text-sm text-center";
 export const serverErrorStyle = "text-error text-sm";
 export const jobListCardContainerStyle =
-  "flex py-[30px] px-[85px] gap-[83px] flex-wrap";
+  "flex pt-[30px] pb-[49px] pl-[85px] gap-[83px] flex-wrap";
 export const jobAlertsTitleStyle =
   "text-black text-2xl font-bold my-4 text-center";
 export const applyOrQuickApplyContainerStyle = "flex justify-start";
