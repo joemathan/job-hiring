@@ -34,7 +34,7 @@ const JobFormStepOne = ({ control, errors }: IJobFormStepOneProps) => {
         labelInputStyle={labelInputStyle}
         labelTitleStyle={labelTitleStyle}
       >
-        <FormValidationErrors errors={errors} name="JobTitle" />
+        <FormValidationErrors errors={errors} name="jobTitle" />
       </LabelWithInputField>
       <LabelWithInputField
         title={companyNameLabel}
