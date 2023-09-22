@@ -5,6 +5,9 @@ import {
   industryPlaceholder,
   jobTitleLabel,
   jobTitlePlaceholder,
+  labelContainerStyle,
+  labelInputStyle,
+  labelTitleStyle,
   locationLabel,
   locationPlaceholder,
   remoteTypeLabel,
@@ -27,6 +30,9 @@ const JobFormStepOne = ({ control, errors }: IJobFormStepOneProps) => {
         control={control}
         isError={isError(errors, "jobTitle")}
         rules={getFormValidationRules(true)}
+        labelContainerStyle={labelContainerStyle}
+        labelInputStyle={labelInputStyle}
+        labelTitleStyle={labelTitleStyle}
       >
         <FormValidationErrors errors={errors} name="JobTitle" />
       </LabelWithInputField>
@@ -39,6 +45,9 @@ const JobFormStepOne = ({ control, errors }: IJobFormStepOneProps) => {
         control={control}
         isError={isError(errors, "companyName")}
         rules={getFormValidationRules(true)}
+        labelContainerStyle={labelContainerStyle}
+        labelInputStyle={labelInputStyle}
+        labelTitleStyle={labelTitleStyle}
       >
         <FormValidationErrors errors={errors} name="companyName" />
       </LabelWithInputField>
@@ -51,6 +60,9 @@ const JobFormStepOne = ({ control, errors }: IJobFormStepOneProps) => {
         control={control}
         isError={isError(errors, "industry")}
         rules={getFormValidationRules(true)}
+        labelContainerStyle={labelContainerStyle}
+        labelInputStyle={labelInputStyle}
+        labelTitleStyle={labelTitleStyle}
       >
         <FormValidationErrors errors={errors} name="industry" />
       </LabelWithInputField>
@@ -64,6 +76,9 @@ const JobFormStepOne = ({ control, errors }: IJobFormStepOneProps) => {
           control={control}
           isError={isError(errors, "location")}
           rules={getFormValidationRules(false)}
+          labelContainerStyle={labelContainerStyle}
+          labelInputStyle={labelInputStyle}
+          labelTitleStyle={labelTitleStyle}
         >
           <FormValidationErrors errors={errors} name="location" />
         </LabelWithInputField>
@@ -76,6 +91,9 @@ const JobFormStepOne = ({ control, errors }: IJobFormStepOneProps) => {
           control={control}
           isError={isError(errors, "remoteType")}
           rules={getFormValidationRules(false)}
+          labelContainerStyle={labelContainerStyle}
+          labelInputStyle={labelInputStyle}
+          labelTitleStyle={labelTitleStyle}
         >
           <FormValidationErrors errors={errors} name="remoteType" />
         </LabelWithInputField>

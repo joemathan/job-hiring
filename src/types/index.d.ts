@@ -14,6 +14,9 @@ interface ILabelProps {
   };
   children: JSX.Element;
   showTitle?: boolean;
+  labelContainerStyle: string;
+  labelTitleStyle: string;
+  labelInputStyle: string;
 }
 
 interface IButtonProps {
@@ -33,6 +36,7 @@ interface IModalProps {
 interface IRadioButtonProps {
   title: string;
   children: JSX.Element | JSX.Element[];
+  radioButtonTitleStyle: string;
 }
 
 interface ICreateJobFormData {
@@ -64,6 +68,7 @@ interface IDeleteIconProps {
 
 interface IcardProps {
   children: JSX.Element | JSX.Element[];
+  cardStyle: string;
 }
 
 interface ICandidateGeneralDetailsProps {
@@ -96,6 +101,10 @@ interface ICandidateGeneralDetailsProps {
     ICreateJobFormData,
     unknown
   >;
+  jobTitleStyle: string;
+  iconStyle: string;
+  companyStyle: string;
+  locationStyle: string;
 }
 
 interface ICandidateOtherDetailsProps {

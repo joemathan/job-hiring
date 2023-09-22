@@ -1,9 +1,24 @@
 import NetflixIcon from "../../assets/image/netflix.png";
 import {
   applyNowButtonName,
+  applyOrQuickApplyContainerStyle,
+  candiateDetailsContainerStyle,
+  cardSecondaryContainerStyle,
+  cardStyle,
+  companyStyle,
   externalApplyButtonName,
+  iconStyle,
+  jobAlertsTitle,
+  jobAlertsTitleStyle,
+  jobListCardContainerStyle,
+  jobTitleStyle,
+  locationStyle,
+  noDataAvailable,
+  noDataAvailableStyle,
   primaryButtonStyle,
   secondaryButtonStyle,
+  serverError,
+  serverErrorStyle,
 } from "../../constants";
 import { IJobCardListProps } from "../../types";
 import Button from "../Button/Button";
@@ -25,26 +40,18 @@ const JobCardList = ({
 }: IJobCardListProps) => {
   return (
     <>
-      <h1 className="text-black text-2xl font-bold my-4 text-center">
-        Job Alerts
-      </h1>
+      <h1 className={jobAlertsTitleStyle}>{jobAlertsTitle}</h1>
       {isLoading && <Loader />}
-      {isError && (
-        <p className="text-error text-sm">
-          Something went wrong. Please try again later.
-        </p>
-      )}
+      {isError && <p className={serverErrorStyle}>{serverError}</p>}
       {isSuccess && jobsData.length === 0 && (
-        <p className="text-placeholder text-sm text-center">
-          No Data available. Please hit 'Create Jobs' to add a new Job.
-        </p>
+        <p className={noDataAvailableStyle}>{noDataAvailable}</p>
       )}
-      <section className="flex py-[30px] px-[85px] gap-[83px] flex-wrap">
+      <section className={jobListCardContainerStyle}>
         {isSuccess &&
           jobsData.length > 0 &&
           jobsData.map((jobData) => (
-            <Card key={jobData.id}>
-              <section className="flex gap-x-2 items-start">
+            <Card key={jobData.id} cardStyle={cardStyle}>
+              <section className={cardSecondaryContainerStyle}>
                 <img
                   height={48}
                   width={48}
@@ -53,7 +60,7 @@ const JobCardList = ({
                   loading="lazy"
                   className="rounded-[5px]"
                 />
-                <div className="flex flex-col gap-y-6 w-full">
+                <div className={candiateDetailsContainerStyle}>
                   <CandidateGeneralDetails
                     jobTitle={jobData.jobTitle}
                     companyName={jobData.companyName}
@@ -66,6 +73,10 @@ const JobCardList = ({
                     setIsEditClicked={setIsEditClicked}
                     reset={reset}
                     deleteJobMutate={deleteJobMutate}
+                    jobTitleStyle={jobTitleStyle}
+                    iconStyle={iconStyle}
+                    companyStyle={companyStyle}
+                    locationStyle={locationStyle}
                   />
                   <CandidateOtherDetails
                     experienceMinimum={jobData.experienceMinimum}
@@ -74,7 +85,7 @@ const JobCardList = ({
                     salaryMaximum={jobData.salaryMaximum}
                     totalEmployee={jobData.totalEmployee}
                   />
-                  <section className="flex justify-start">
+                  <section className={applyOrQuickApplyContainerStyle}>
                     {jobData.quickApply && (
                       <Button
                         name={applyNowButtonName}

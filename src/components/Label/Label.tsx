@@ -12,6 +12,9 @@ const LabelWithInputField = ({
   isError,
   rules,
   children,
+  labelContainerStyle,
+  labelTitleStyle,
+  labelInputStyle,
   showTitle = true,
 }: ILabelProps) => {
   const isMandatoryIcon = isRequired
@@ -19,13 +22,9 @@ const LabelWithInputField = ({
     : "";
 
   return (
-    <label htmlFor={name} className="block w-full">
+    <label htmlFor={name} className={labelContainerStyle}>
       {showTitle && (
-        <span
-          className={`${isMandatoryIcon} block text-labelFontSize font-labelFontFamily leading-labelLineHeight font-medium text-dark`}
-        >
-          {title}
-        </span>
+        <span className={`${isMandatoryIcon} ${labelTitleStyle}`}>{title}</span>
       )}
       <Controller
         name={name}
@@ -35,7 +34,7 @@ const LabelWithInputField = ({
           <input
             id={name}
             type={type}
-            className={`mt-1 px-3 py-2 rounded-[5px] border-solid border-labelBorderColor bg-cardBgColor border text-dark font-labelFontFamily text-labelFontSize focus:border-primaryColor focus:outline-none block w-full placeholder:text-placeholder ${
+            className={`${labelInputStyle} ${
               isError
                 ? "border-error focus:border-error"
                 : "border-labelBorderColor focus:border-primaryColor"

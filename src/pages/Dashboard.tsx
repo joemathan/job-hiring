@@ -19,8 +19,13 @@ import {
   createSuccessMessage,
   deleteErrorMessage,
   deleteSuccessMessage,
+  dialogPanelStyle,
+  dialogTitleStyle,
   externalApplyOption,
+  modalBackdropStyle,
+  modalContainerStyle,
   nextButtonName,
+  nextOrSaveButtonContainerStyle,
   primaryButtonStyle,
   quickApplyOption,
   saveButtonName,
@@ -195,13 +200,10 @@ function Dashboard() {
         setIsModalOpen={setIsCreateJobModalOpen}
         handleOnModalClose={handleOnModalClose}
       >
-        <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="fixed inset-0 flex w-screen items-center justify-center p-4 border rounded-[10px] border-cardBorderColor"
-        >
-          <Dialog.Panel className="w-[577px] min-h-[564px] rounded bg-cardBgColor p-8 flex flex-col items-start gap-6">
-            <Dialog.Title className="leading-titleLineHeight font-titleFontWeight text-titleFontSize text-dark">
+        <div className={modalBackdropStyle} aria-hidden="true" />
+        <form onSubmit={handleSubmit(onSubmit)} className={modalContainerStyle}>
+          <Dialog.Panel className={dialogPanelStyle}>
+            <Dialog.Title className={dialogTitleStyle}>
               {createJobTitle}
             </Dialog.Title>
             {!isStepOneValid && (
@@ -216,7 +218,7 @@ function Dashboard() {
                 isSaveClicked={isSaveClicked}
               />
             )}
-            <div className="mt-16 w-full flex justify-end">
+            <div className={nextOrSaveButtonContainerStyle}>
               <Button
                 buttonStyle={primaryButtonStyle}
                 name={

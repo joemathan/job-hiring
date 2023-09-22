@@ -1,11 +1,14 @@
+import { radioButtonContainerStyle } from "../../constants";
 import { IRadioButtonProps } from "../../types";
 
-const LabelWithRadioButton = ({ title, children }: IRadioButtonProps) => {
+const LabelWithRadioButton = ({
+  title,
+  children,
+  radioButtonTitleStyle,
+}: IRadioButtonProps) => {
   return (
-    <label className="block w-full">
-      <span className="after:content-['*'] after:ml-0.5 after:text-error block text-labelFontSize font-labelFontFamily leading-labelLineHeight font-medium text-dark">
-        {title}
-      </span>
+    <label className={radioButtonContainerStyle}>
+      <span className={radioButtonTitleStyle}>{title}</span>
       {children}
     </label>
   );

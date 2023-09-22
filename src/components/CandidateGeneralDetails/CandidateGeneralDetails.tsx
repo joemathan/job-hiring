@@ -15,6 +15,10 @@ const CandidateGeneralDetails = ({
   setSelectedOption,
   setIsEditClicked,
   deleteJobMutate,
+  jobTitleStyle,
+  iconStyle,
+  companyStyle,
+  locationStyle,
 }: ICandidateGeneralDetailsProps) => {
   const handleEditIconClick = () => {
     setIsEditClicked(true);
@@ -40,25 +44,17 @@ const CandidateGeneralDetails = ({
   return (
     <section>
       <div className="flex items-center justify-between">
-        <h1 className="text-black text-2xl font-normal not-italic">
-          {jobTitle}
-        </h1>
+        <h1 className={jobTitleStyle}>{jobTitle}</h1>
         <section className="flex">
-          <EditIcon
-            onClick={handleEditIconClick}
-            style="w-6 h-6 cursor-pointer"
-          />
-          <DeleteIcon
-            style="w-6 h-6 cursor-pointer"
-            onClick={handleDeleteClick}
-          />
+          <EditIcon onClick={handleEditIconClick} style={iconStyle} />
+          <DeleteIcon style={iconStyle} onClick={handleDeleteClick} />
         </section>
       </div>
-      <p className="text-black text-base font-normal not-italic">
+      <p className={companyStyle}>
         {companyName} - {industry}
       </p>
       {(location || remoteType) && (
-        <p className="text-locationColor text-base font-normal not-italic">
+        <p className={locationStyle}>
           {location} ({remoteType})
         </p>
       )}

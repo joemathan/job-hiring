@@ -1,4 +1,8 @@
-import { partTime } from "../../constants";
+import {
+  candidateDetailsContentStyle,
+  candidateOtherDetailsContainerStyle,
+  partTime,
+} from "../../constants";
 import { ICandidateOtherDetailsProps } from "../../types";
 import { formatNumberWithCommas } from "../../utils";
 
@@ -10,23 +14,21 @@ const CandidateOtherDetails = ({
   totalEmployee,
 }: ICandidateOtherDetailsProps) => {
   return (
-    <section className="flex flex-col gap-y-2">
-      <p className="text-jobDetailColor text-base font-normal not-italic">
-        {partTime}
-      </p>
+    <section className={candidateOtherDetailsContainerStyle}>
+      <p className={candidateDetailsContentStyle}>{partTime}</p>
       {experienceMaximum && experienceMinimum && (
-        <p className="text-jobDetailColor text-base font-normal not-italic">
+        <p className={candidateDetailsContentStyle}>
           Experience ({experienceMinimum} - {experienceMaximum} years)
         </p>
       )}
       {salaryMinimum && salaryMaximum && (
-        <p className="text-jobDetailColor text-base font-normal not-italic">
+        <p className={candidateDetailsContentStyle}>
           INR (₹) {formatNumberWithCommas(salaryMinimum)} -
           {formatNumberWithCommas(salaryMaximum)} / Month
         </p>
       )}
       {totalEmployee && (
-        <p className="text-jobDetailColor text-base font-normal not-italic">
+        <p className={candidateDetailsContentStyle}>
           {totalEmployee} employees
         </p>
       )}

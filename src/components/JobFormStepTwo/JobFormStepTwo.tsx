@@ -5,8 +5,12 @@ import {
   experienceLabel,
   externalApplyLabel,
   externalApplyOption,
+  labelContainerStyle,
+  labelInputStyle,
+  labelTitleStyle,
   quickApplyLabel,
   quickApplyOption,
+  radioButtonTitleStyle,
   salaryLabel,
   totalEmployeeLabel,
   totalEmployeePlaceholder,
@@ -36,6 +40,9 @@ const JobFormStepTwo = ({
           control={control}
           isError={isError(errors, "experienceMinimum")}
           rules={getFormValidationRules(false)}
+          labelContainerStyle={labelContainerStyle}
+          labelInputStyle={labelInputStyle}
+          labelTitleStyle={labelTitleStyle}
         >
           <FormValidationErrors errors={errors} name="experienceMinimum" />
         </LabelWithInputField>
@@ -49,6 +56,9 @@ const JobFormStepTwo = ({
           control={control}
           isError={isError(errors, "experienceMaximum")}
           rules={getFormValidationRules(false)}
+          labelContainerStyle={labelContainerStyle}
+          labelInputStyle={labelInputStyle}
+          labelTitleStyle={labelTitleStyle}
         >
           <FormValidationErrors errors={errors} name="experienceMaximum" />
         </LabelWithInputField>
@@ -63,6 +73,9 @@ const JobFormStepTwo = ({
           control={control}
           isError={isError(errors, "salaryMinimum")}
           rules={getFormValidationRules(false)}
+          labelContainerStyle={labelContainerStyle}
+          labelInputStyle={labelInputStyle}
+          labelTitleStyle={labelTitleStyle}
         >
           <FormValidationErrors errors={errors} name="salaryMinimum" />
         </LabelWithInputField>
@@ -76,6 +89,9 @@ const JobFormStepTwo = ({
           control={control}
           isError={isError(errors, "salaryMaximum")}
           rules={getFormValidationRules(false)}
+          labelContainerStyle={labelContainerStyle}
+          labelInputStyle={labelInputStyle}
+          labelTitleStyle={labelTitleStyle}
         >
           <FormValidationErrors errors={errors} name="salaryMaximum" />
         </LabelWithInputField>
@@ -89,10 +105,16 @@ const JobFormStepTwo = ({
         control={control}
         isError={isError(errors, "totalEmployee")}
         rules={getFormValidationRules(false)}
+        labelContainerStyle={labelContainerStyle}
+        labelInputStyle={labelInputStyle}
+        labelTitleStyle={labelTitleStyle}
       >
         <FormValidationErrors errors={errors} name="totalEmployee" />
       </LabelWithInputField>
-      <LabelWithRadioButton title={applyTypeLabel}>
+      <LabelWithRadioButton
+        title={applyTypeLabel}
+        radioButtonTitleStyle={radioButtonTitleStyle}
+      >
         <>
           <section className="flex gap-4 items-center justify-start">
             <div className="flex items-center">
